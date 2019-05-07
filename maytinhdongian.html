@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+	.so{
+		width: 30px;
+		height: 30px;
+	}
+	body{
+		margin-right: 1161px;
+		border: solid;
+	}
+	#mt{
+		padding: 20px;
+	}
+</style>
+<title>Document</title>
+</head>
+<body>
+	<form  id="mt" name="maytinh" action="#" method="get" accept-charset="utf-8">
+			<input type="text" name="ip" id="input" style="width: 130px;"><br/>
+			<input class="so" type="button" value="1" id="1" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="2" id="2" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="3" id="3" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="+" id="cong" onclick="pheptoan(this.id)"><br/>
+			<input class="so" type="button" value="4" id="4" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="5" id="5" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="6" id="6" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="-" id="tru" onclick="pheptoan(this.id)"><br/>
+			<input class="so" type="button" value="7" id="7" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="8" id="8" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="9" id="9" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="x" id="nhan" onclick="pheptoan(this.id)"><br/>
+			<input class="so" type="reset" value="C" id="c">
+			<input class="so" type="button" value="0" id="0" onclick="addnumber(this.id)">
+			<input class="so" type="button" value="=" id="bang" onclick="ketqua(this.id)">
+			<input class="so" type="button" value="/" id="chia" onclick="pheptoan(this.id)">
+		</form>
+
+		<script>
+			var bonho = 0;
+			var tinhtoan="";
+			function addnumber(id)
+			{
+				 number = document.getElementById("input").value;
+				document.getElementById("input").value = number+id;
+			
+			}
+			function pheptoan(id)
+			{
+				bonho = document.getElementById("input").value;
+				document.getElementById("input").value = "" ;
+				tinhtoan = id; 
+			}
+			function ketqua(id)
+			{
+				number = document.getElementById("input").value;
+				switch (tinhtoan){
+					case "cong":
+					ketquapheptoan = parseInt(bonho) + parseInt(number);
+					break;
+					case "tru":
+					ketquapheptoan = parseInt(bonho) - parseInt(number);
+					break;
+					case "nhan":
+					ketquapheptoan = parseInt(bonho) * parseInt(number);
+					break;
+					case "chia":
+					ketquapheptoan = parseInt(bonho) / parseInt(number);
+					break;
+				}
+				document.getElementById("input").value = ketquapheptoan;
+			}
+		</script>
+		</<body>
+			</html>
