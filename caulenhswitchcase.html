@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		#tn{
+			margin: 500px;
+			margin-top: 100px;
+			width: 350px;
+		}
+	</style>
+		<title>Document</title>
+</head>
+<body>
+	<form action="#" method="get" name="tinhngay" id="tn" accept-charet="utf-8">
+		<fieldset>
+		   <lengend style="color:green; border:1px;"></lengend>
+		   Nhập tháng bạn muốn tính ngày:
+		   <br/>
+			<input type="text" name="inputday" id="ipd">
+			<input  type="button" value="Tính số ngày" id="tsn" onclick="tinh()">
+			<div id="bayra"></div>
+		</fieldset>
+	</form>
+	<script>
+		function tinh()
+		{	
+			let a = parseInt(document.getElementById('ipd').value);
+			switch (a)
+			{
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					document.getElementById('bayra').innerHTML = ("Tháng có 31 ngày");
+					break;
+				case 2:
+					document.getElementById('bayra').innerHTML = ("Tháng 2 có  28 hoặc 29 ngày");
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					document.getElementById('bayra').innerHTML = ("có 30 ngày");
+					break;
+				default:
+					document.getElementById('bayra').innerHTML = ("sô tháng từ 1-12 thằng ngu ạ >.<");
+					
+			}
+		}
+	</script>
+</body>
+</html>
